@@ -115,25 +115,107 @@
 // console.log(categoriseTemperatures(temperatures));
 
 
-const products = [
-    ["Keyboard", 45],
-    ["Montior", 188],
-    ["Mouse" , 25],
-    ["Headphones", 75],
-    ["USB Cable", 10]
-];
+// const products = [
+//     ["Keyboard", 45],
+//     ["Montior", 188],
+//     ["Mouse" , 25],
+//     ["Headphones", 75],
+//     ["USB Cable", 10]
+// ];
 
-function filterProducts(productArr){
-let productArray = [];
+// function filterProducts(productArr){
+// let productArray = [];
 
-for (const product of productArr){
-    if (product[1] < 50){
-        productArray.push(product[0]);
-    }
+// for (const product of productArr){
+//     if (product[1] < 50){
+//         productArray.push(product[0]);
+//     }
+// }
+
+// return productArray;
+
+// }
+
+// console.log(filterProducts(products));
+
+// const basket = [
+//     ["apple", 0.5, 4],
+//      ["bread", 1.5, 2],
+//       ["milk", 1.2, 3]
+// ]
+
+// function calculateTotal(basketArr){
+// let storeCost = 0;
+
+// for (const basketItem of basketArr){
+
+
+        
+//     storeCost += basketItem[1] * basketItem
+    
+     
+// }
+// return storeCost;
+// }
+
+// console.log(calculateTotal(basket));
+// const students = [
+//     { name: "Alice", score: 82 },
+//     { name: "Bob", score: 45 },
+//     { name: "Charlie", score: 67 },
+//     { name: "Daisy", score: 91 }
+// ];
+
+// function passingStudents(studentArr){
+// let studentPassed= []
+
+// for (const student of studentArr){
+
+//     if (student.score >= 50){
+//         studentPassed.push(`${student.name} ${student.score} `)
+//     }
+
+// }
+// return studentPassed
+// }
+
+// console.log( passingStudents(students));
+
+// const students = [
+//     { name: "Alice", score: 82, attendance: 95 },
+//     { name: "Bob", score: 45, attendance: 80 },
+//     { name: "Charlie", score: 67, attendance: 60 },
+//     { name: "Daisy", score: 91, attendance: 100 },
+//     { name: "Ethan", score: 38, attendance: 55 }
+// ];
+
+
+// function findFailedStudents(studentsArr){
+// let failedStudents = [];
+
+// for (const student of studentsArr){
+// if(student.score < 50 || student.attendance <75){
+//     failedStudents.push(student.name)
+// }
+// }
+// return failedStudents;
+
+// }
+// console.log(findFailedStudents(students));
+
+const prices = [100, 50, 25, 80, 120];
+
+function applyDiscount(priceArr){
+let discount = [];
+let newPrice = [];
+for (const price of priceArr){
+  discount.push(price / 100 * 20 )
+  newPrice.push( price - discount)
+
+
 }
 
-return productArray;
-
+return newPrice
 }
 
-console.log(filterProducts(products));
+console.log(applyDiscount(prices));

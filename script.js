@@ -292,3 +292,86 @@
 
 
 // console.log(removeDuplicates(numbers));
+
+// const orders = [
+//     { customer: "Alice", total: 120, status: "completed" },
+//     { customer: "Bob", total: 80, status: "pending" },
+//     { customer: "Charlie", total: 200, status: "completed" },
+//     { customer: "Alice", total: 50, status: "completed" },
+//     { customer: "Bob", total: 40, status: "cancelled" }
+// ];
+
+// function analyseOrders(orders){
+
+//   let completeOrders = 0;
+//   let highestSpent = 0;
+//   let topCustomer = null;
+//   let totalRevenue = 0;
+// let customerTotals = {};
+
+
+//   for (const order of orders){
+
+//     if (order.status === "completed" ){
+// console.log(order.status);
+//   completeOrders++; 
+//   totalRevenue += order.total;
+
+//   if(customerTotals[order.customer]){
+// customerTotals[order.customer] += order.total;
+//   } else {
+//     customerTotals[order.customer] = order.total;
+//   }
+// }}
+
+// for (const [customer, total] of Object.entries(customerTotals)){
+//   if (total > highestSpent){
+// highestSpent = total;
+// topCustomer = customer
+//   }
+// }
+//   return {completeOrders, totalRevenue, topCustomer};
+// }
+// // console.log(orders[0].status);
+// console.log(analyseOrders(orders));
+
+// const employees = [
+//     { name: "Alice", department: "Sales", sales: 4500 },
+//     { name: "Bob", department: "Marketing", sales: 2000 },
+//     { name: "Charlie", department: "Sales", sales: 6200 },
+//     { name: "David", department: "Marketing", sales: 3500 },
+//     { name: "Emma", department: "Sales", sales: 5100 },
+//     { name: "Frank", department: "Support", sales: 1800 }
+// ];
+
+// function analyseEmployees(employees){
+// let totalSales = 0;
+// let salesDepartmentCount = 0;
+// let topEmployee = null;
+// let highestSales = 0;
+// let highPerformers = [];
+// let employeeArr = [];
+
+// for (const employee of employees){
+//   totalSales += employee.sales;
+//    if (employee.sales > 4000){
+//   highPerformers.push(employee.name)
+//    }
+
+// if (employee.department === "Sales"){
+//   salesDepartmentCount++
+
+// }
+// if (employee.sales > highestSales){
+//   highestSales = employee.sales
+//   topEmployee = employee.name
+
+// }
+//   }
+
+
+// return {totalSales, salesDepartmentCount, topEmployee, highPerformers};
+
+// }
+// // console.log(employees);
+// console.log(analyseEmployees(employees));

@@ -203,19 +203,92 @@
 // }
 // console.log(findFailedStudents(students));
 
-const prices = [100, 50, 25, 80, 120];
+// const prices = [100, 50, 25, 80, 120];
 
-function applyDiscount(priceArr){
-let discount = [];
-let newPrice = [];
-for (const price of priceArr){
-  discount.push(price / 100 * 20 )
-  newPrice.push( price - discount)
+// function applyDiscount(priceArr){
+//   const newPrice = [];
+// for (const price of priceArr){
+//   const discount = price / 100 * 20;
 
 
-}
+// newPrice.push(price - discount);
 
-return newPrice
-}
 
-console.log(applyDiscount(prices));
+// }
+
+// return newPrice
+// }
+
+// console.log(applyDiscount(prices));
+
+// const numbers = [1, 2, 3];
+
+// const result = numbers.map(number => {
+//     return number * 2;
+// });
+
+// console.log(result);
+
+// const users = [
+//     { id: 1, name: "Alice" },
+//     { id: 2, name: "Bob" },
+//     { id: 3, name: "Charlie" }
+// ];
+
+// // function findUser(users, id){
+
+// for (const user of users ){
+// if (user.id === id){
+//   return user}
+// }
+// return null
+// }
+// console.log(findUser(users, 2)); 
+
+// function findUser(users, id){
+//   return users.find(user => user.id === id);
+// }
+
+// const fruits = [
+//     "apple",
+//     "banana",
+//     "apple",
+//     "orange",
+//     "banana",
+//     "apple"
+// ];
+
+// function countFruits(fruits){
+// const counts = {};
+// for (const fruit of fruits){
+
+//   if (counts[fruit]){
+//     counts[fruit]++
+//   }else{
+//     counts[fruit] = 1
+//   }
+ 
+//   }
+// return counts;
+// }
+
+// console.log(countFruits(fruits));
+
+// const numbers = [1, 2, 2, 3, 4, 4, 5, 1];
+
+// function removeDuplicates(numbers){
+// const uniqueNumbers = [];
+
+// for (const number of numbers){
+  
+//     if (!uniqueNumbers.includes(number)){
+//           uniqueNumbers.push(number)
+
+//     }
+
+//   }
+// return uniqueNumbers;
+// }
+
+
+// console.log(removeDuplicates(numbers));

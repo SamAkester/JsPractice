@@ -170,156 +170,6 @@
 // let studentPassed= []
 
 // for (const student of studentArr){
-
-//     if (student.score >= 50){
-//         studentPassed.push(`${student.name} ${student.score} `)
-//     }
-
-// }
-// return studentPassed
-// }
-
-// console.log( passingStudents(students));
-
-// const students = [
-//     { name: "Alice", score: 82, attendance: 95 },
-//     { name: "Bob", score: 45, attendance: 80 },
-//     { name: "Charlie", score: 67, attendance: 60 },
-//     { name: "Daisy", score: 91, attendance: 100 },
-//     { name: "Ethan", score: 38, attendance: 55 }
-// ];
-
-
-// function findFailedStudents(studentsArr){
-// let failedStudents = [];
-
-// for (const student of studentsArr){
-// if(student.score < 50 || student.attendance <75){
-//     failedStudents.push(student.name)
-// }
-// }
-// return failedStudents;
-
-// }
-// console.log(findFailedStudents(students));
-
-// const prices = [100, 50, 25, 80, 120];
-
-// function applyDiscount(priceArr){
-//   const newPrice = [];
-// for (const price of priceArr){
-//   const discount = price / 100 * 20;
-
-
-// newPrice.push(price - discount);
-
-
-// }
-
-// return newPrice
-// }
-
-// console.log(applyDiscount(prices));
-
-// const numbers = [1, 2, 3];
-
-// const result = numbers.map(number => {
-//     return number * 2;
-// });
-
-// console.log(result);
-
-// const users = [
-//     { id: 1, name: "Alice" },
-//     { id: 2, name: "Bob" },
-//     { id: 3, name: "Charlie" }
-// ];
-
-// // function findUser(users, id){
-
-// for (const user of users ){
-// if (user.id === id){
-//   return user}
-// }
-// return null
-// }
-// console.log(findUser(users, 2)); 
-
-// function findUser(users, id){
-//   return users.find(user => user.id === id);
-// }
-
-// const fruits = [
-//     "apple",
-//     "banana",
-//     "apple",
-//     "orange",
-//     "banana",
-//     "apple"
-// ];
-
-// function countFruits(fruits){
-// const counts = {};
-// for (const fruit of fruits){
-
-//   if (counts[fruit]){
-//     counts[fruit]++
-//   }else{
-//     counts[fruit] = 1
-//   }
- 
-//   }
-// return counts;
-// }
-
-// console.log(countFruits(fruits));
-
-// const numbers = [1, 2, 2, 3, 4, 4, 5, 1];
-
-// function removeDuplicates(numbers){
-// const uniqueNumbers = [];
-
-// for (const number of numbers){
-  
-//     if (!uniqueNumbers.includes(number)){
-//           uniqueNumbers.push(number)
-
-//     }
-
-//   }
-// return uniqueNumbers;
-// }
-
-
-// console.log(removeDuplicates(numbers));
-
-// const orders = [
-//     { customer: "Alice", total: 120, status: "completed" },
-//     { customer: "Bob", total: 80, status: "pending" },
-//     { customer: "Charlie", total: 200, status: "completed" },
-//     { customer: "Alice", total: 50, status: "completed" },
-//     { customer: "Bob", total: 40, status: "cancelled" }
-// ];
-
-// function analyseOrders(orders){
-
-//   let completeOrders = 0;
-//   let highestSpent = 0;
-//   let topCustomer = null;
-//   let totalRevenue = 0;
-// let customerTotals = {};
-
-
-//   for (const order of orders){
-
-//     if (order.status === "completed" ){
-// console.log(order.status);
-//   completeOrders++; 
-//   totalRevenue += order.total;
-
-//   if(customerTotals[order.customer]){
-// customerTotals[order.customer] += order.total;
-//   } else {
 //     customerTotals[order.customer] = order.total;
 //   }
 // }}
@@ -375,3 +225,33 @@
 // }
 // // console.log(employees);
 // console.log(analyseEmployees(employees));
+
+const inventory = [
+    { name: "Laptop", stock: 10 },
+    { name: "Mouse", stock: 25 },
+    { name: "Keyboard", stock: 15 },
+    { name: "Monitor", stock: 8 }
+];
+
+const sales = [
+    { name: "Laptop", quantity: 3 },
+    { name: "Mouse", quantity: 5 },
+    { name: "Laptop", quantity: 2 },
+    { name: "Monitor", quantity: 4 }
+];
+
+function updateInventory(inventory, sales){
+
+for (const sale of sales){
+
+for (const item of inventory){
+  if (sale.name === item.name){
+  item.stock -= sale.quantity 
+  }
+}
+}
+return inventory
+}
+
+
+console.log(updateInventory(inventory, sales));

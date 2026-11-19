@@ -226,32 +226,154 @@
 // // console.log(employees);
 // console.log(analyseEmployees(employees));
 
-const inventory = [
-    { name: "Laptop", stock: 10 },
-    { name: "Mouse", stock: 25 },
-    { name: "Keyboard", stock: 15 },
-    { name: "Monitor", stock: 8 }
-];
+// const inventory = [
+//     { name: "Laptop", stock: 10 },
+//     { name: "Mouse", stock: 25 },
+//     { name: "Keyboard", stock: 15 },
+//     { name: "Monitor", stock: 8 }
+// ];
+
+// const sales = [
+//     { name: "Laptop", quantity: 3 },
+//     { name: "Mouse", quantity: 5 },
+//     { name: "Laptop", quantity: 2 },
+//     { name: "Monitor", quantity: 4 }
+// ];
+
+// function updateInventory(inventory, sales){
+
+// for (const sale of sales){
+
+// for (const item of inventory){
+//   if (sale.name === item.name){
+//   item.stock -= sale.quantity 
+//   }
+// }
+// }
+// return inventory
+// }
+
+
+// console.log(updateInventory(inventory, sales));
+
+// const accounts = [
+//     { name: "Alice", balance: 500 },
+//     { name: "Bob", balance: 300 },
+//     { name: "Charlie", balance: 1000 },
+//     { name: "Emma", balance: 750 }
+// ];
+
+// const transactions = [
+//     { name: "Alice", type: "withdraw", amount: 100 },
+//     { name: "Bob", type: "deposit", amount: 200 },
+//     { name: "Alice", type: "deposit", amount: 50 },
+//     { name: "Charlie", type: "withdraw", amount: 300 },
+//     { name: "Bob", type: "withdraw", amount: 100 }
+// ];
+
+
+// console.log(accounts);
+// function processTransactions (accounts, transactions){
+
+// const accountArray = accounts.map(a => ({...a}))
+
+
+// for (const t of transactions){
+
+//   for (const a of accountArray){
+// if (a.name === t.name && t.type === "deposit"){
+
+// a.balance += t.amount
+
+// }else {
+//   if(a.name === t.name && t.type ==="withdraw"){
+//   a.balance -= t.amount
+//   }
+
+
+
+// }}
+// }
+// return accountArray
+// }
+
+
+// console.log(processTransactions(accounts,transactions))
+
+// const original = [{value: 10}];
+// const copy = [...original];
+
+// copy[0] = {value: 50};
+
+// console.log(original[0].value);
+// console.log(copy[0].value);
+
+// const customers = [
+//     { name: "Alice", totalSpent: 0, orders: 0 },
+//     { name: "Bob", totalSpent: 0, orders: 0 },
+//     { name: "Charlie", totalSpent: 0, orders: 0 },
+//     { name: "Emma", totalSpent: 0, orders: 0 }
+// ];
+
+// const purchases = [
+//     { customer: "Alice", product: "Laptop", price: 800, quantity: 1 },
+//     { customer: "Bob", product: "Mouse", price: 25, quantity: 2 },
+//     { customer: "Alice", product: "Keyboard", price: 60, quantity: 2 },
+//     { customer: "Charlie", product: "Monitor", price: 200, quantity: 1 },
+//     { customer: "Bob", product: "Headphones", price: 75, quantity: 1 }
+// ];
+
+// function processPurchases(customers, purchases){
+
+  
+//   for (const c of customers){
+
+//     for (const p of purchases){
+//           if( c.name === p.customer){
+
+//           c.totalSpent += p.price * p.quantity ;
+//           c.orders++ 
+
+//           }
+//     }
+//     }
+
+//   return customers;
+// }
+// console.log(processPurchases(customers, purchases));
+
 
 const sales = [
-    { name: "Laptop", quantity: 3 },
-    { name: "Mouse", quantity: 5 },
-    { name: "Laptop", quantity: 2 },
-    { name: "Monitor", quantity: 4 }
+    { product: "Laptop", category: "Electronics", price: 800, quantity: 2 },
+    { product: "Mouse", category: "Electronics", price: 25, quantity: 4 },
+    { product: "Desk", category: "Furniture", price: 200, quantity: 1 },
+    { product: "Chair", category: "Furniture", price: 100, quantity: 3 },
+    { product: "Keyboard", category: "Electronics", price: 60, quantity: 2 },
+    { product: "Lamp", category: "Home", price: 40, quantity: 5 }
 ];
 
-function updateInventory(inventory, sales){
+
+function analyseSales(sales){
+
+const report = {};
 
 for (const sale of sales){
 
-for (const item of inventory){
-  if (sale.name === item.name){
-  item.stock -= sale.quantity 
+  if (!report[sale.category]){
+
+report[sale.category] = {
+totalRevenue: 0,
+totalItems: 0,
+transactions: 0
+
+  };
   }
+report[sale.category].totalRevenue += sale.price * sale.quantity;
+report[sale.category].transactions++
+report[sale.category].totalItems += sale.quantity        
 }
-}
-return inventory
+return report;
+
 }
 
-
-console.log(updateInventory(inventory, sales));
+console.log(JSON.stringify(analyseSales(sales), null, 2));
